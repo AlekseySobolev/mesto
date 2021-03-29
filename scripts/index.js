@@ -1,7 +1,7 @@
 const popup          = document.querySelector('.popup');
 const popup__form    = document.querySelector('.popup__form');
-let author         = document.querySelector('.profile__author');
-let author_subline = document.querySelector('.profile__author-subline');
+let author           = document.querySelector('.profile__author');
+let author_subline   = document.querySelector('.profile__author-subline');
 
 const editBtn        = document.querySelector('.edit-btn');
 const closeBtn       = document.querySelector('.popup__close-btn');
@@ -22,7 +22,7 @@ function closePopup(){
 
 function formSubmitHandler(event){
     event.preventDefault();
-    author.textContent =  authorElement.value; 
+    author.textContent         =  authorElement.value; 
     author_subline.textContent =  author_sublineElement.value; 
     closePopup();
 }
