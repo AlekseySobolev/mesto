@@ -1,0 +1,18 @@
+.profile__author-subline{
+    margin: 0;
+    padding: 0;
+    margin-top: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@media screen and (max-width: 767px){
+    .profile__author-subline{
+        margin: 0 auto;
+        margin-top: 14px;
+        font-size: 14px;
+        line-height: 17px; 
+    }
+}

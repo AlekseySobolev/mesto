@@ -1,0 +1,16 @@
+.popup__submit-btn{
+    min-height: 50px;
+    background-color: black;
+    color: white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px){
+    .popup__submit-btn{
+        font-size: 14px;
+        line-height: 17px;   
+    }
+}
