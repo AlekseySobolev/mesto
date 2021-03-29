@@ -1,11 +1,11 @@
 .elements{
     margin: 0 auto;
     margin-top: 51px;
-    width: 100%; 
+    width: 100%;
     display: grid;
     box-sizing: border-box;
     grid-template-columns: repeat(3, 1fr);
-    gap: 17px 20px 
+    gap: 17px 20px;
 }
 
 @media screen and (max-width: 1279px){
@@ -17,10 +17,10 @@
 @media screen and (max-width: 767px){
     .elements{
         margin-top: 36px;
-        width: calc(100% - 19px * 2); 
+        width: calc(100% - 19px * 2);
         display: grid;
         box-sizing: border-box;
         grid-template-columns:  1fr;
-        gap: 20px     
+        gap: 20px;
     }
 }

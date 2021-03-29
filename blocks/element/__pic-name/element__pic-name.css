@@ -1,7 +1,7 @@
 .element__pic-name{
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;   
+    white-space: nowrap;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
