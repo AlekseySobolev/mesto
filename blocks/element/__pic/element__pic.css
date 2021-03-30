@@ -1,4 +1,7 @@
 .element__pic{
+    box-sizing: border-box; 
+    object-fit: cover;
+    object-position: center;
     width: 100%;
     display: block;
     border-radius: 10px 10px 0 0;
