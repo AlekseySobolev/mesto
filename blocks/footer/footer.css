@@ -3,8 +3,17 @@
     margin-top: 67px;
     margin-bottom: 60px;
 }
+@media screen and (max-width: 1023px){
+    .footer{
+        margin: 0 auto;
+        margin-top: 67px;
+        margin-bottom: 60px;
+        width: calc(100% - 25px * 2);    
+    }
+}
 @media screen and (max-width: 767px){
     .footer{
+        width: 100%;
         margin-top: 48px;
         margin-bottom: 36px;
     }

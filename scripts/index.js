@@ -1,18 +1,17 @@
-const popup          = document.querySelector('.popup');
-const popup__form    = document.querySelector('.popup__form');
+let popup            = document.querySelector('.popup');
+let popupForm        = document.querySelector('.popup__form');
 let author           = document.querySelector('.profile__author');
-let author_subline   = document.querySelector('.profile__author-subline');
+let authorSubline    = document.querySelector('.profile__author-subline');
 
-const editBtn        = document.querySelector('.edit-btn');
-const closeBtn       = document.querySelector('.popup__close-btn');
-const submitBtn      = document.querySelector('.popup__submit-btn');
+let editBtn   = document.querySelector('.profile__edit-btn');
+let closeBtn  = document.querySelector('.popup__close-btn');
 
-let authorElement = document.querySelectorAll('input')[0];
-let author_sublineElement = document.querySelectorAll('input')[1];
+let authorElement = document.getElementById('text-field1');
+let UserName      = document.getElementById('text-field2');
 
 function openPopup(){ 
     authorElement.value         = author.textContent;
-    author_sublineElement.value = author_subline.textContent;
+    UserName.value = authorSubline.textContent;
     popup.classList.add('popup_opened');  
 }
 
@@ -23,15 +22,11 @@ function closePopup(){
 function formSubmitHandler(event){
     event.preventDefault();
     author.textContent         =  authorElement.value; 
-    author_subline.textContent =  author_sublineElement.value; 
+    authorSubline.textContent =  UserName.value; 
     closePopup();
 }
-popup__form.addEventListener('submit', formSubmitHandler);
+popupForm.addEventListener('submit', formSubmitHandler);
 editBtn.addEventListener('click', openPopup);
 closeBtn.addEventListener('click',closePopup);
-popup.addEventListener('click',closePopup);
-popup__form.addEventListener('click',function(event){
-   event.stopPropagation();
-});
 
 

@@ -1,9 +1,0 @@
-.text-field{
-    margin-bottom: 30px;
-    min-height: 27px;
-    border: none;
-    border-bottom: 1px solid #000000;    
-}
-.text-field:last-child {
-    margin-bottom: 48px;
-}

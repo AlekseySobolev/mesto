@@ -10,6 +10,7 @@
 
 @media screen and (max-width: 1023px){
     .elements{ 
+        width: calc(100% - 25px * 2);
         grid-template-columns:  repeat(2, 1fr);     
     }
 }
@@ -18,8 +19,6 @@
     .elements{
         margin-top: 36px;
         width: calc(100% - 19px * 2);
-        display: grid;
-        box-sizing: border-box;
         grid-template-columns:  1fr;
         gap: 20px;
     }

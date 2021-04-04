@@ -1,4 +1,4 @@
-.edit-btn{
+.profile__edit-btn{
     padding: 0;
     min-width: 24px;
     min-height: 24px;
@@ -8,7 +8,7 @@
 
 
 @media screen and (max-width: 767px){
-    .edit-btn{
+    .profile__edit-btn{
         min-width:  18px;
         min-height: 18px; 
     }

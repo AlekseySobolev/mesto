@@ -11,22 +11,8 @@
   <body class="page">
     <div class="page__container">
 
-      <div class="popup">
-        <form type ="submit" class="popup__form">
-          <div class="popup__container">
-            <h1 class="popup__title">Редактировать&nbsp;профиль</h1>
-            <div class="popup__close-btn link"></div> 
-           <div class="popup__text-container">
-              <input type="text"  class="text-field" required>
-              <input type="text"  class="text-field" required>
-           </div>
-            <button type ="submit" class="popup__submit-btn link">Сохранить</button>
-          </div>
-        </form> 
-        
-      </div>
       <header class="header">
-        <img src="./images/logo.png" alt="Логотип" class="header__logo">
+        <img src="./images/logo.svg" alt="Логотип" class="header__logo">
       </header>
 
       <main class="content">
@@ -35,77 +21,93 @@
             <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar">
              <div class="profile__info">
               <div class="profile__container">
-                <p class="profile__author">Жак Ив Кусто</p>               
-               <button class="edit-btn link"><img src="./images/Edit.svg" alt="Изображение ручки"></button>
+                <h1 class="profile__author">Жак Ив Кусто</h1>               
+               <button type ="button" class="profile__edit-btn link"><img src="./images/Edit.svg" alt="Изображение ручки"></button>
               </div> 
               <p class="profile__author-subline">Исследователь океана</p>   
             </div>
-          </div>
-          
-          <div class="add-btn link">+</div> 
+          </div>    
+          <button type ="button" class="profile__add-btn link"><img src="./images/Plus.svg" alt="Изображение плюса"></button> 
         </section>
 
         <section class="elements">
           <article class="element">
             <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__pic">
-            <div class="element__container">
+           <!-- <div class="element__container">-->
               <div class="element__group">
-                <p class="element__pic-name">Карачаевск</p>
-                <img src="./images/like.svg" alt="Лайк" class="link">
+                <h2 class="element__pic-name">Карачаевск</h2>
+                <button type ="button" class="element__like-btn link"><img src="./images/like.svg" alt="Лайк"></button>
               </div>
-            </div>        
+            <!--</div>-->
           </article>
           <article class="element">
             <img src="./images/MountainElbrus.jpg" alt="Эльбрус" class="element__pic">
-            <div class="element__container">
+            
               <div class="element__group">
-                <p class="element__pic-name">Гора Эльбрус</p>
-                <img src="./images/like.svg" alt="Лайк" class="link">
+                <h2 class="element__pic-name">Гора Эльбрус</h2>
+                <button type ="button" class="element__like-btn link"><img src="./images/like.svg" alt="Лайк"></button>
               </div>
-            </div>        
+                   
           </article>
           <article class="element">
             <img src="./images/Dombuy.jpg" alt="Домбай" class="element__pic">
-            <div class="element__container">
+            
               <div class="element__group">
-                <p class="element__pic-name">Домбай</p>
-                <img src="./images/like.svg" alt="Лайк" class="link">
+                <h2 class="element__pic-name">Домбай</h2>
+                <button type ="button" class="element__like-btn link"><img src="./images/like.svg" alt="Лайк"></button>
               </div>
-            </div>        
+                  
           </article>
           <article class="element">
             <img src="./images/MountainElbrus.jpg" alt="Эльбрус" class="element__pic">
-            <div class="element__container">
+            
               <div class="element__group">
-                <p class="element__pic-name">Гора Эльбрус</p>
-                <img src="./images/like.svg" alt="Лайк" class="link">
+                <h2 class="element__pic-name">Гора Эльбрус</h2>
+                <button type ="button" class="element__like-btn link"><img src="./images/like.svg" alt="Лайк"></button>
               </div>
-            </div>        
+                  
           </article>
           <article class="element">
             <img src="./images/Dombuy.jpg" alt="Домбай" class="element__pic">
-            <div class="element__container">
+            
               <div class="element__group">
-                <p class="element__pic-name">Домбай</p>
-                <img src="./images/like.svg" alt="Лайк" class="link">
+                <h2 class="element__pic-name">Домбай</h2>
+                <button type ="button" class="element__like-btn link"><img src="./images/like.svg" alt="Лайк"></button>
               </div>
-            </div>        
+                    
           </article>
           <article class="element">
             <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__pic">
-            <div class="element__container">
+            
               <div class="element__group">
-                <p class="element__pic-name">Карачаево-Черкесия</p>
-                <img src="./images/like.svg" alt="Лайк" class="link">
+                <h2 class="element__pic-name">Карачаево-Черкесия</h2>
+                <button type ="button" class="element__like-btn link"><img src="./images/like.svg" alt="Лайк"></button>
               </div>
-            </div>        
+                  
           </article>              
         </section>
       </main>
 
       <footer class="footer">
-        <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
+
+      <div class="popup">
+        <div class="popup__container">
+          <form  name = "popup-form" class="popup__form">
+            <div class="popup__form-container">
+              <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
+              <button type ="button" class="popup__close-btn link"></button> 
+                <div class="popup__text-container">
+                  <input type="text" id = "text-field1" name = "inputForm1"  class="popup__text-field" required>
+                  <input type="text" id = "text-field2" name = "inputForm2" class="popup__text-field" required>
+                </div>
+              <button type ="submit"  class="popup__submit-btn link">Сохранить</button>
+            </div>
+              
+          </form>  
+        </div>
+      </div>
 
     </div>
     <script src="./scripts/index.js"></script>

@@ -1,15 +1,32 @@
 .popup__container{
-    margin: 0 auto;
+    /*margin: 0 auto;
     width: calc(100% - 36px * 2);
     margin-top: 34px;
     margin-bottom: 37px;
     display: flex;
     flex-direction: column;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  
+    margin-top: 195px;
+    background-color: white;
+    
+    max-height: 330px;
+    border-radius: 10px;*/
+
+    margin: 0 auto;
+    min-width: 430px;
 }
 @media screen and (max-width: 767px){
     .popup__container{
-        width: calc(100% - 22px * 2);
+        /*width: calc(100% - 22px * 2);
         margin-top: 25px;
         margin-bottom: 25px;  
+        min-height: 322px;
+        margin-top: 123px;*/
+        min-width: 282px;
+        
     }
 }

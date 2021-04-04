@@ -6,6 +6,10 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 294px;
 }
 
 @media screen and (max-width: 767px){
@@ -13,6 +17,7 @@
         margin: 0 auto;
         margin-right: 10px;
         font-size: 27px;
-        line-height: 33px; 
+        line-height: 33px;
+        max-width: 189px;
     }
 }
