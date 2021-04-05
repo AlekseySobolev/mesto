@@ -6,7 +6,7 @@ right: -40px;
 top: -40px;
 background: rgba(0, 0, 0, 0);
 border: none;
-background-image: url(/images/CloseIcon.svg);
+background-image: url(../../../images/CloseIcon.svg);
 background-position: center;
 }
 

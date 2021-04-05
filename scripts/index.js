@@ -6,8 +6,8 @@ let authorSubline    = document.querySelector('.profile__author-subline');
 let editBtn   = document.querySelector('.profile__edit-btn');
 let closeBtn  = document.querySelector('.popup__close-btn');
 
-let authorElement = document.getElementById('text-field1');
-let UserName      = document.getElementById('text-field2');
+let authorElement = document.getElementById('authorElement');
+let UserName      = document.getElementById('UserName');
 
 function openPopup(){ 
     authorElement.value         = author.textContent;

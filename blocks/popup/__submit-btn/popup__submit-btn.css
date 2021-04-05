@@ -15,3 +15,8 @@
         line-height: 17px;   
     }
 }
+
+.popup__submit-btn:hover{
+    opacity: .8;
+    cursor: pointer;
+}
