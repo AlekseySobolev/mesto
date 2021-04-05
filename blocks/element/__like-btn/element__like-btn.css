@@ -8,10 +8,10 @@
     padding: 0;
     padding-right: 21px;
     background-color: white;
-    border: none;  
+    border: none;
 }
 
 .element__like-btn:hover{
-   opacity: .5; 
+   opacity: .5;
    cursor: pointer;
 }
