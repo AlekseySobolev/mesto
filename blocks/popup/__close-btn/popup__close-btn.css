@@ -12,8 +12,9 @@ background-position: center;
 
 @media screen and (max-width: 767px){
     .popup__close-btn{
+        background-image: url(../../../images/CloseIcon320.svg);
         min-height: 26px;
         min-width: 26px;
-        right: 0px;
+        right: 5px;
     }
 }

@@ -1,13 +1,4 @@
 .popup__form{
-    /*display: flex;
-    
-    flex-direction: column;
-    margin: 0 auto;
-    margin-top: 195px;
-    background-color: white;
-    min-width: 430px;
-    max-height: 330px;
-    border-radius: 10px;*/
     position: relative;
     background-color: white;
     margin-top: 195px;
@@ -17,11 +8,6 @@
 }
 @media screen and (max-width: 767px){
     .popup__form{
-       /* 
-         margin-top: 25px;
-        margin-bottom: 25px;
-        min-width: 282px;
-        min-height: 322px;*/
         margin-top: 123px;   
     }
 }

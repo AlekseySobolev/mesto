@@ -1,10 +1,4 @@
 .element__like-btn{
-   /* max-height: 19px;
-    max-width: 22px;
-    background: rgba(0, 0, 0, 0);
-    
-    background-image: url(/images/like.svg);
-    background-position: center;  */
     padding: 0;
     padding-right: 21px;
     background-color: white;
