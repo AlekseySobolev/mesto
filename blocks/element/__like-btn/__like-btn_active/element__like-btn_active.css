@@ -1,0 +1,19 @@
+.element__like-btn_active{
+    padding: 0;
+    margin: 0;
+    margin-right: 21px;
+    background-color: white;
+    border: none;
+    min-height: 19px;
+    min-width: 22px;
+    background-image: url(../../../../images/like_active.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.element__like-btn_active:hover{
+    opacity: .5;
+    cursor: pointer;
+ }
+ 

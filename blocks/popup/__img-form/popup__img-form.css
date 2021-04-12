@@ -1,0 +1,9 @@
+.popup__img-form{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    max-width: 75vw;
+    max-height: 75vh;
+    display: none;
+}

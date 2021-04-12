@@ -1,13 +1,13 @@
-.popup__form{
-    display: none;
+.popup__card-form{
     position: relative;
     background-color: white;
     margin-top: 195px;
+    display: none;
     flex-direction: column;
     border-radius: 10px;
 }
 @media screen and (max-width: 767px){
-    .popup__form{
+    .popup__card-form{
         margin-top: 123px;   
     }
 }
