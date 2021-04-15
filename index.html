@@ -39,7 +39,7 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
-      <div class="popup">
+      <div class="popup popup-profile">
         <div class="popup__container">
           <form  name = "popup-form" class="popup__form">
               <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
@@ -50,8 +50,22 @@
                 </div>
               <button type ="submit"  class="popup__submit-btn">Сохранить</button>      
           </form>  
-          
-          <form  name = "popup-card-form" class="popup__card-form">
+        </div>
+      </div>
+
+      <div class="popup popup-preview">
+        <div class="popup__container">   
+        <form  name = "popup-img-form" class="popup__img-form">
+            <img class = "popup__img">
+            <p class="popup__img-desc"></p>       
+          <button type ="button" class="popup__close-btn link"></button>     
+      </form>
+        </div>
+      </div>
+
+      <div class="popup popup-card">
+        <div class="popup__container">   
+         <form  name = "popup-card-form" class="popup__card-form">
             <h2 class="popup__title">Новое&nbsp;место</h2>
             <button type ="button" class="popup__close-btn link"></button> 
               <div class="popup__text-container">
@@ -60,15 +74,9 @@
               </div>
             <button type ="submit"  class="popup__submit-btn">Создать</button>      
         </form>
-
-        <form  name = "popup-img-form" class="popup__img-form">
-            <img class = "popup__img">
-            <p class="popup__img-desc"></p>       
-          <button type ="button" class="popup__close-btn link"></button>     
-      </form>
-
         </div>
       </div>
+
       <template class="elementTemplate">
         <article class="element">
           <img class="element__pic">

@@ -1,9 +1,11 @@
 .popup__img-form{
+    display: flex;
+    flex-direction: column;
     position: relative;
     margin: 0 auto;
     margin-top: 90px;
     margin-bottom: 90px;
     max-width: 75vw;
     max-height: 75vh;
-    display: none;
+    
 }
