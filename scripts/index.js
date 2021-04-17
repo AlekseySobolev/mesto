@@ -108,6 +108,7 @@ function openPreviewModal(evt) {
 
   elementImg.src = cardSrc;
   elementText.textContent = cardText;
+  elementImg.alt = cardText; 
 
   openModal(previewModal);
 }
