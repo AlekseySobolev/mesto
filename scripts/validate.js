@@ -54,9 +54,9 @@ const setEventListeners = (formElement, validationObject) => {
             toggleSubmitBtn(inputList, buttonElement, validationObject);    
         });
     });
-    if(formElement.name === 'popup-card-form'){
+    //if(formElement.name === 'popup-card-form'){
         toggleSubmitBtn(inputList, buttonElement, validationObject); 
-    }
+    //}
     
 };
 
