@@ -7,14 +7,16 @@ import {FormValidator} from './FormValidator.js';
 const profileModal = document.querySelector('.popup-profile');
 const cardModal = document.querySelector('.popup-card');
 const cardModalFormValidation = new FormValidator(validationObj, cardModal);
+cardModalFormValidation.enableValidation();
 const previewModal = document.querySelector('.popup-preview');
 const profileModalFormValidation = new FormValidator(validationObj, profileModal);
+profileModalFormValidation.enableValidation();
 //buttons
-const ProfileModalOpenBtn = document.querySelector('.profile__edit-btn');
-const ProfileModalCloseBtn = profileModal.querySelector('.popup__close-btn');
-const CardModalOpenBtn = document.querySelector('.profile__add-btn');
-const CardModalCloseBtn = cardModal.querySelector('.popup__close-btn');
-const PreviewModalCloseBtn = previewModal.querySelector('.popup__close-btn');
+const profileModalOpenBtn = document.querySelector('.profile__edit-btn');
+const profileModalCloseBtn = profileModal.querySelector('.popup__close-btn');
+const cardModalOpenBtn = document.querySelector('.profile__add-btn');
+const cardModalCloseBtn = cardModal.querySelector('.popup__close-btn');
+const previewModalCloseBtn = previewModal.querySelector('.popup__close-btn');
 
 const popupList = document.querySelectorAll('.popup');
 const sectionProfile = document.querySelector('.profile');
@@ -66,33 +68,31 @@ function SubmitCardModal(event) {
 }
 
 function openProfileModal(modal) {
-  profileModalFormValidation.enableValidation();
   authorElement.value = author.textContent;
   userName.value      = authorSubline.textContent;
   openModal(modal);
 }
 
 function openCardModal(modal) {
-  cardModalFormValidation.enableValidation();
   openModal(modal);
 }
 
-function openPreviewModal(evt) {
-  const card     = evt.currentTarget.parentElement;
-  const cardSrc  = card.querySelector('.element__pic').currentSrc;
-  const cardText = card.querySelector('.element__pic-name').textContent;
+//function openPreviewModal(evt) {
+ // const card     = evt.currentTarget.parentElement;
+ // const cardSrc  = card.querySelector('.element__pic').currentSrc;
+ // const cardText = card.querySelector('.element__pic-name').textContent;
 
-  const elementImg  = previewModal.querySelector('.popup__img');
-  const elementText = previewModal.querySelector('.popup__img-desc');
+ // const elementImg  = previewModal.querySelector('.popup__img');
+ // const elementText = previewModal.querySelector('.popup__img-desc');
 
-  elementImg.src          = cardSrc;
-  elementText.textContent = cardText;
-  elementImg.alt          = cardText; 
+ // elementImg.src          = cardSrc;
+ // elementText.textContent = cardText;
+ // elementImg.alt          = cardText; 
 
-  openModal(previewModal);
-}
+  //openModal(previewModal);
+//}
 
-export function openPreviewModalTest(cardSrc, cardText) {
+export function openPreviewModal(cardSrc, cardText) {
   
   const elementImg  = previewModal.querySelector('.popup__img');
   const elementText = previewModal.querySelector('.popup__img-desc');
@@ -121,22 +121,25 @@ function closeOnOverley(event) {
   }
 }
 
+function createCard(element) {
+  const card = new Card(element, elementTemplate);
+  sectionElements.append(card.generateCard());
+}
 //подписки на события
 profileModal.addEventListener('submit', submitProfileModal);
 profileModal.addEventListener('click', closeOnOverley);
-ProfileModalOpenBtn.addEventListener('click', () => openProfileModal(profileModal));
-ProfileModalCloseBtn.addEventListener('click', () => closeModal(profileModal));
+profileModalOpenBtn.addEventListener('click', () => openProfileModal(profileModal));
+profileModalCloseBtn.addEventListener('click', () => closeModal(profileModal));
 
-CardModalOpenBtn.addEventListener('click', () => openCardModal(cardModal));
-CardModalCloseBtn.addEventListener('click', () => closeModal(cardModal));
+cardModalOpenBtn.addEventListener('click', () => openCardModal(cardModal));
+cardModalCloseBtn.addEventListener('click', () => closeModal(cardModal));
 cardModal.addEventListener('submit', SubmitCardModal);
 cardModal.addEventListener('click', closeOnOverley);
 
 previewModal.addEventListener('click', closeOnOverley);
-PreviewModalCloseBtn.addEventListener('click', () => closeModal(previewModal));
+previewModalCloseBtn.addEventListener('click', () => closeModal(previewModal));
 
 // генерируем карточки
 initialCards.forEach(element => {
-    const card = new Card(element, elementTemplate);
-    sectionElements.append(card.generateCard());
+  createCard(element);
 });
