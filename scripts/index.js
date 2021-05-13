@@ -51,7 +51,7 @@ function submitProfileModal(event) {
 
 }
 
-function SubmitCardModal(event) {
+function submitCardModal(event) {
   event.preventDefault();
 
   const element = {};
@@ -133,7 +133,7 @@ profileModalCloseBtn.addEventListener('click', () => closeModal(profileModal));
 
 cardModalOpenBtn.addEventListener('click', () => openCardModal(cardModal));
 cardModalCloseBtn.addEventListener('click', () => closeModal(cardModal));
-cardModal.addEventListener('submit', SubmitCardModal);
+cardModal.addEventListener('submit', submitCardModal);
 cardModal.addEventListener('click', closeOnOverley);
 
 previewModal.addEventListener('click', closeOnOverley);
