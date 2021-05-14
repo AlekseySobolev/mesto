@@ -58,8 +58,7 @@ function submitCardModal(event) {
   element.name  = cardModal.querySelector('#cardName').value;
   element.link  = cardModal.querySelector("#cardLink").value;
 
-  const card = new Card(element, elementTemplate);
-  sectionElements.prepend(card.generateCard());
+  sectionElements.prepend(createCard(element));
 
   event.target.reset();
   event.target.lastElementChild.classList.add('popup__submit-btn_unactive');
@@ -76,21 +75,6 @@ function openProfileModal(modal) {
 function openCardModal(modal) {
   openModal(modal);
 }
-
-//function openPreviewModal(evt) {
- // const card     = evt.currentTarget.parentElement;
- // const cardSrc  = card.querySelector('.element__pic').currentSrc;
- // const cardText = card.querySelector('.element__pic-name').textContent;
-
- // const elementImg  = previewModal.querySelector('.popup__img');
- // const elementText = previewModal.querySelector('.popup__img-desc');
-
- // elementImg.src          = cardSrc;
- // elementText.textContent = cardText;
- // elementImg.alt          = cardText; 
-
-  //openModal(previewModal);
-//}
 
 export function openPreviewModal(cardSrc, cardText) {
   
@@ -123,7 +107,7 @@ function closeOnOverley(event) {
 
 function createCard(element) {
   const card = new Card(element, elementTemplate);
-  sectionElements.append(card.generateCard());
+  return card.generateCard();
 }
 //подписки на события
 profileModal.addEventListener('submit', submitProfileModal);
@@ -141,5 +125,5 @@ previewModalCloseBtn.addEventListener('click', () => closeModal(previewModal));
 
 // генерируем карточки
 initialCards.forEach(element => {
-  createCard(element);
+   sectionElements.append(createCard(element));  
 });

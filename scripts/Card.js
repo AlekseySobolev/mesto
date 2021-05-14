@@ -8,14 +8,14 @@ export class Card{
         picBtn:   '.element__pic',
         picName:  '.element__pic-name' 
     }
-    constructor(cardObj, cardSelector){
+    constructor(cardObj, cardTemplate){
         this._name = cardObj.name;
         this._link = cardObj.link;
-        this._cardSelector = cardSelector;
+        this._cardTemplate = cardTemplate;
     }
 
     _getTemplate(){
-        const cardElement = this._cardSelector.cloneNode(true);
+        const cardElement = this._cardTemplate.cloneNode(true);
         return cardElement;
    }
    
