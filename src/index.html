@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="./pages/index.css">-->
+    <title>Место</title>
+  </head>
+
+  <body class="page">
+    <div class="page__container">
+
+      <header class="header">
+        <img src="./images/logo.svg" alt="Логотип" class="header__logo">
+      </header>
+
+      <main class="content">
+        <section class="profile">
+          <div class="profile__content">
+            <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar">
+             <div class="profile__info">
+              <div class="profile__container">
+                <h1 class="profile__author">Жак Ив Кусто</h1>               
+               <button type ="button" class="profile__edit-btn link"><img src="./images/Edit.svg" alt="Изображение ручки"></button>
+              </div> 
+              <p class="profile__author-subline">Исследователь океана</p>   
+            </div>
+          </div>    
+          <button type ="button" class="profile__add-btn link"><img src="./images/Plus.svg" alt="Изображение плюса"></button> 
+        </section>
+
+        <section class="elements">            
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      </footer>
+
+      <div class="popup popup-profile">
+        <div class="popup__container">
+          <form  name = "popup-form" class="popup__form popup__submit-form ">
+              <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
+              <button type ="button" class="popup__close-btn link"></button> 
+                <div class="popup__text-container">
+                  <div class="popup__error-container">
+                    <input type="text" id = "authorElement" name = "inputForm1"  class="popup__text-field" minlength="2" maxlength="40" required>
+                  <span class="popup__input-error" id = "authorElement-error"></span>
+                  </div> 
+                  <div class="popup__error-container">
+                    <input type="text" id = "UserName" name = "inputForm2" class="popup__text-field"  minlength="2" maxlength="200" required> 
+                    <span class="popup__input-error" id = "UserName-error"></span>
+                  </div>   
+                </div>
+              <button type ="submit"  class="popup__submit-btn">Сохранить</button>      
+          </form>  
+        </div>
+      </div>
+
+      <div class="popup popup-preview">
+        <div class="popup__container">   
+        <form  name = "popup-img-form" class="popup__img-form">
+            <img alt = "наименование фотографии" src = "./images/logo.svg" class = "popup__img"><!--src и alt присвоено (ненужное)значение по умолчанию т.к. тесты не пропускали пустое значение-->
+            <p class="popup__img-desc"></p>       
+          <button type ="button" class="popup__close-btn link"></button>
+      </form>
+        </div>
+      </div>
+
+      <div class="popup popup-card">
+        <div class="popup__container">   
+         <form  name = "popup-card-form" class="popup__card-form popup__submit-form ">
+            <h2 class="popup__title">Новое&nbsp;место</h2>
+            <button type ="button" class="popup__close-btn link"></button> 
+              <div class="popup__text-container">
+                <div class="popup__error-container">
+                  <input type="text" id = "cardName" name = "inputForm1" placeholder="Название"  class="popup__text-field" minlength="2" maxlength="40" required>
+                  <span class="popup__input-error" id = "cardName-error"></span>
+                </div>
+                <div class="popup__error-container">
+                  <input type="url" id = "cardLink" name = "inputForm2" placeholder="Ссылка на картинку" class="popup__text-field" required>
+                  <span class="popup__input-error" id = "cardLink-error"></span>
+                </div>
+              
+              </div>
+            <button type ="submit"  class="popup__submit-btn">Создать</button>      
+        </form>
+        </div>
+      </div>
+
+      <template class="elementTemplate">
+        <article class="element">
+          <img class="element__pic">
+            <div class="element__group">
+              <h2 class="element__pic-name"></h2>
+              <button type ="button" class="element__like-btn"></button>
+            </div>
+            <button type ="button" class="element__trash-btn link"><img src="./images/Trash.svg" alt="Мусорная корзина"></button>
+        </article>
+      </template>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/Card.js"></script>
+    <script type="module" src="./scripts/UserInfo.js"></script>
+    <script type="module" src="./scripts/Popup.js"></script>
+    <script type="module" src="./scripts/PopupWithForm.js"></script>
+    <script type="module" src="./scripts/PopupWithImage.js"></script>
+    <script type="module" src="./scripts/Section.js"></script>
+    <script type="module" src="./scripts/FormValidator.js"></script>
+
+  </body>
+
+</html>
