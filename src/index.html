@@ -13,22 +13,23 @@
     <div class="page__container">
 
       <header class="header">
-        <img src="./images/logo.svg" alt="Логотип" class="header__logo">
+        <img src="<%=require('./images/logo.svg')%>" alt="Логотип" class="header__logo">
       </header>
 
       <main class="content">
         <section class="profile">
           <div class="profile__content">
-            <img src="./images/avatar.jpg" alt="Аватар" class="profile__avatar">
+            <img src="<%=require('./images/avatar.jpg')%>" alt="Аватар" class="profile__avatar">
              <div class="profile__info">
               <div class="profile__container">
                 <h1 class="profile__author">Жак Ив Кусто</h1>               
-               <button type ="button" class="profile__edit-btn link"><img src="./images/Edit.svg" alt="Изображение ручки"></button>
+               <!--<button type ="button" class="profile__edit-btn link"><img src="./images/Edit.svg" alt="Изображение ручки"></button>-->
+               <button type ="button" class="profile__edit-btn link"><img src="<%=require('./images/Edit.svg')%>" alt="Изображение ручки"></button>
               </div> 
               <p class="profile__author-subline">Исследователь океана</p>   
             </div>
           </div>    
-          <button type ="button" class="profile__add-btn link"><img src="./images/Plus.svg" alt="Изображение плюса"></button> 
+          <button type ="button" class="profile__add-btn link"><img src="<%=require('./images/Plus.svg')%>" alt="Изображение плюса"></button> 
         </section>
 
         <section class="elements">            
@@ -62,7 +63,7 @@
       <div class="popup popup-preview">
         <div class="popup__container">   
         <form  name = "popup-img-form" class="popup__img-form">
-            <img alt = "наименование фотографии" src = "./images/logo.svg" class = "popup__img"><!--src и alt присвоено (ненужное)значение по умолчанию т.к. тесты не пропускали пустое значение-->
+            <img alt = "наименование фотографии" src = "<%=require('./images/logo.svg')%>" class = "popup__img"><!--src и alt присвоено (ненужное)значение по умолчанию т.к. тесты не пропускали пустое значение-->
             <p class="popup__img-desc"></p>       
           <button type ="button" class="popup__close-btn link"></button>
       </form>
@@ -97,7 +98,7 @@
               <h2 class="element__pic-name"></h2>
               <button type ="button" class="element__like-btn"></button>
             </div>
-            <button type ="button" class="element__trash-btn link"><img src="./images/Trash.svg" alt="Мусорная корзина"></button>
+            <button type ="button" class="element__trash-btn link"><img src="<%=require('./images/Trash.svg')%>" alt="Мусорная корзина"></button>
         </article>
       </template>
     </div>
