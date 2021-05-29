@@ -1,4 +1,3 @@
-//import {openPreviewModal} from './index.js';
 export class Card{
 
     static selectors = {

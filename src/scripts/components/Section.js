@@ -1,4 +1,3 @@
-
 export class Section{
     constructor({items, renderer}, container){
         this._items = items;

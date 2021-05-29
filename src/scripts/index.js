@@ -1,31 +1,27 @@
 import '../pages/index.css'; 
-import {initialCards} from './InitialCards.js';
-import {validationObj} from './validationObj.js';
-import {Card} from './Card.js';
-import {FormValidator} from './FormValidator.js';
-import {Section} from './Section.js';
-import {PopupWithImage} from './PopupWithImage.js';
-import {PopupWithForm} from './PopupWithForm.js';
-import {UserInfo} from './UserInfo.js';
+import {initialCards} from './utils/InitialCards.js';
+import {validationObj} from './utils/validationObj.js';
+import {Card} from './components/Card.js';
+import {FormValidator} from './components/FormValidator.js';
+import {Section} from './components/Section.js';
+import {PopupWithImage} from './components/PopupWithImage.js';
+import {PopupWithForm} from './components/PopupWithForm.js';
+import {UserInfo} from './components/UserInfo.js';
 //modals
-const profileModal = document.querySelector('.popup-profile');
+const profileModal = '.popup-profile';
 const popupProfile = new PopupWithForm(profileModal, submitProfileModal);
 const profileModalFormValidation = new FormValidator(validationObj, profileModal);
 profileModalFormValidation.enableValidation();
 popupProfile.setEventListeners();
 
-const cardModal = document.querySelector('.popup-card');
+const cardModal = '.popup-card';
 const popupcard = new PopupWithForm(cardModal, submitCardModal);
 popupcard.setEventListeners();
 const cardModalFormValidation = new FormValidator(validationObj, cardModal);
 cardModalFormValidation.enableValidation();
 
-const previewModal = document.querySelector('.popup-preview');
-const popupPreview = new PopupWithImage(previewModal);
-
-const author = document.querySelector('.profile__author').textContent;
-const authorSubline = document.querySelector('.profile__author-subline').textContent;
-const uInf = new UserInfo({userName: author, userInfo: authorSubline});
+const popupPreview = new PopupWithImage('.popup-preview');
+const uInf = new UserInfo({userName: '.profile__author', userInfo: '.profile__author-subline'});
 //buttons
 const profileModalOpenBtn = document.querySelector('.profile__edit-btn');
 const cardModalOpenBtn = document.querySelector('.profile__add-btn');
@@ -52,8 +48,8 @@ function submitCardModal(formValues) {
 function openProfileModal() {
 
   const objUserInfo = uInf.getUserInfo();
-  profileModal.querySelector('#authorElement').value = objUserInfo.name;
-  profileModal.querySelector('#UserName').value = objUserInfo.info;
+  document.querySelector('#authorElement').value = objUserInfo.name;
+  document.querySelector('#UserName').value = objUserInfo.info;
   popupProfile.open();
 }
 
@@ -68,5 +64,5 @@ function createCard(element) {
   return card.generateCard();
 }
 //подписки на события
-profileModalOpenBtn.addEventListener('click', () => openProfileModal(profileModal));
-cardModalOpenBtn.addEventListener('click', () => openCardModal(cardModal));
+profileModalOpenBtn.addEventListener('click', () => openProfileModal());
+cardModalOpenBtn.addEventListener('click', () => openCardModal());

@@ -1,8 +1,8 @@
 export class FormValidator {
     constructor(validationObject, form) {
         this._validationObject = validationObject;
-        this._form = form;
-
+        //this._form = form;
+        this._form = document.querySelector(form);
     }
     _checkInputValidity(inputElement){
         const isNotInputElementValid = !inputElement.validity.valid;
