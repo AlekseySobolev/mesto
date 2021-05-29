@@ -6,6 +6,7 @@ export class PopupWithForm extends Popup {
         super(popup);
         this._handleFormSubmit = handleFormSubmit;
         this._form = document.querySelector('.popup__submit-form');
+        this.button =  this._form.querySelector('.popup__submit-btn');
     }
 
     _getInputValues() {
@@ -23,11 +24,17 @@ export class PopupWithForm extends Popup {
         this.popup.addEventListener('submit', (event) => {
             event.preventDefault();
             this._handleFormSubmit(this._getInputValues());
+            this._inputList.forEach(input => {
+                input.value = '';
+            });
+            this.button.classList.add('popup__submit-btn_unactive');
+            this.button.setAttribute('disabled', true);
             this.close(event);
         });
     }
 
     close(event) {
+        
         this._form.reset();
         super.close();
     }
