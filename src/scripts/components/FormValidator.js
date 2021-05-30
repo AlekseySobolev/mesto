@@ -1,7 +1,6 @@
 export class FormValidator {
     constructor(validationObject, form) {
         this._validationObject = validationObject;
-        //this._form = form;
         this._form = document.querySelector(form);
     }
     _checkInputValidity(inputElement){
@@ -47,6 +46,7 @@ export class FormValidator {
     _setEventListeners() {
         this._form.addEventListener(('submit'), (event) => {
             event.preventDefault();
+            event.target.reset();
         });
 
         const inputList = Array.from(this._form.querySelectorAll(this._validationObject.InputSelector));
@@ -59,10 +59,10 @@ export class FormValidator {
                 this._toggleSubmitBtn(inputList, buttonElement);
            });
        });
-
         this._toggleSubmitBtn(inputList, buttonElement);
-
     }
+
+    
     enableValidation() {
         this._setEventListeners();
     }
