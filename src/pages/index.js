@@ -46,7 +46,6 @@ function submitCardModal(formValues) {
 }
 
 function openProfileModal() {
-  cardModalFormValidation.enableValidation();
   const objUserInfo = uInf.getUserInfo();
   document.querySelector('#authorElement').value = objUserInfo.name;
   document.querySelector('#UserName').value = objUserInfo.info;
