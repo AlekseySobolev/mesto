@@ -27,8 +27,6 @@ export class PopupWithForm extends Popup {
             this._inputList.forEach(input => {
                 input.value = '';
             });
-            this.button.classList.add('popup__submit-btn_unactive');
-            this.button.setAttribute('disabled', true);
             this.close(event);
         });
     }
