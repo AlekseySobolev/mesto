@@ -18,7 +18,6 @@ export class PopupWithForm extends Popup {
         return this._formValues;
     }
 
-
     setEventListeners() {
         super.setEventListeners();
         this.popup.addEventListener('submit', (event) => {

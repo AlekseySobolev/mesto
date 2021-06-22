@@ -18,7 +18,7 @@ const cardModal = '.popup-card';
 const popupcard = new PopupWithForm(cardModal, submitCardModal);
 popupcard.setEventListeners();
 const cardModalFormValidation = new FormValidator(validationObj, cardModal);
-//cardModalFormValidation.enableValidation();
+cardModalFormValidation.enableValidation();
 
 const popupPreview = new PopupWithImage('.popup-preview');
 const uInf = new UserInfo({userName: '.profile__author', userInfo: '.profile__author-subline'});
@@ -53,7 +53,6 @@ function openProfileModal() {
 }
 
 function openCardModal() {
-  cardModalFormValidation.enableValidation();
  popupcard.open();
 }
 
