@@ -16,6 +16,10 @@ export class Popup{
         this.popup.classList.add('popup_opened');
     }
     close(){
+        this._inputList = this.popup.querySelectorAll('.popup__text-field');
+        this._inputList.forEach(input => {
+               input.value = '';
+            });
         document.removeEventListener('keydown', this._handleEscClose);
         this.popup.classList.remove('popup_opened');
     }

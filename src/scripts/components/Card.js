@@ -43,8 +43,7 @@ export class Card{
         this.element.remove();
     }
 
-    _handleImageClick(){
-        //openPreviewModal(this._link, this._name);  
+    _handleImageClick(){ 
         this._handleCardClick(this._link, this._name);  
     }
 
