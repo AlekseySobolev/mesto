@@ -1,0 +1,9 @@
+.popup__edit-avatar-form{
+    position: relative;
+    background-color: white;
+    /*margin-top: 195px;*/
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 430px;
+}

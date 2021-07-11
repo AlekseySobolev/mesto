@@ -1,0 +1,15 @@
+.profile__edit-avatar-btn{
+background: transparent;
+min-height: 120px;
+min-width: 120px;
+position: absolute;
+opacity: 0;
+background-repeat: no-repeat;
+background-position: center;
+border: none;
+background-image: url(../../../images/EditBig.svg);
+}
+
+.profile__edit-avatar-btn:hover{
+  opacity: 1; 
+}

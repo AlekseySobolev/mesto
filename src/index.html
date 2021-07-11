@@ -19,14 +19,18 @@
       <main class="content">
         <section class="profile">
           <div class="profile__content">
-            <img src="<%=require('./images/avatar.jpg')%>" alt="Аватар" class="profile__avatar">
+            <div class="profile__img-container">
+              <!--<img src="<%=require('./images/avatar.jpg')%>" alt="Аватар" class="profile__avatar">-->
+              <img  alt="Аватар" class="profile__avatar">
+              <button type ="button" class="profile__edit-avatar-btn link" alt="Изображение ручки"></button>
+            </div>
              <div class="profile__info">
               <div class="profile__container">
-                <h1 class="profile__author">Жак Ив Кусто</h1>               
+                <h1 class="profile__author"></h1>               
                <!--<button type ="button" class="profile__edit-btn link"><img src="./images/Edit.svg" alt="Изображение ручки"></button>-->
                <button type ="button" class="profile__edit-btn link"><img src="<%=require('./images/Edit.svg')%>" alt="Изображение ручки"></button>
               </div> 
-              <p class="profile__author-subline">Исследователь океана</p>   
+              <p class="profile__author-subline"></p>   
             </div>
           </div>    
           <button type ="button" class="profile__add-btn link"><img src="<%=require('./images/Plus.svg')%>" alt="Изображение плюса"></button> 
@@ -91,12 +95,41 @@
         </div>
       </div>
 
+      <div class="popup popup-delete-card">
+        <div class="popup__container">
+          <form  name = "popup-delete-card-form" class="popup__delete-card-form popup__submit-form">
+             <h2 class="popup__title">Вы&nbsp;уверены?</h2>
+              <button type ="button" class="popup__close-btn link"></button> 
+              <button type ="submit"  class="popup__submit-btn">Да</button>     
+          </form>  
+        </div>
+      </div>
+
+      <div class="popup popup-edit-avatar">
+        <div class="popup__container">
+          <form  name = "popup-edit-avatar-form" class="popup__edit-avatar-form popup__submit-form">
+             <h2 class="popup__title">Обновить&nbsp;аватар</h2>
+              <button type ="button" class="popup__close-btn link"></button> 
+                 <div class="popup__text-container">
+                  <div class="popup__error-container">
+                    <input type="url" id = "avatarLink" name = "inputForm1" placeholder="Ссылка на картинку" class="popup__text-field" required>
+                    <span class="popup__input-error" id = "avatarLink-error"></span>
+                  </div>
+                </div> 
+              <button type ="submit"  class="popup__submit-btn">Сохранить</button>     
+          </form>  
+        </div>
+      </div>
+
       <template class="elementTemplate">
         <article class="element">
           <img class="element__pic">
             <div class="element__group">
               <h2 class="element__pic-name"></h2>
-              <button type ="button" class="element__like-btn"></button>
+              <div class="element__like-group">
+                <button type ="button" class="element__like-btn"></button>
+                <h3 class="element__like-quantity"></h3>
+              </div> 
             </div>
             <button type ="button" class="element__trash-btn link"><img src="<%=require('./images/Trash.svg')%>" alt="Мусорная корзина"></button>
         </article>
