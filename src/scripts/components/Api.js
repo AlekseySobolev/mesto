@@ -1,4 +1,3 @@
-import { profileAuthor, profileSubline, profileAvatar, initialCards, section, createCard } from "../utils/constants";
 export class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -11,11 +10,7 @@ export class Api {
       headers: this._headers
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
       })
       .catch((err) => {
         console.log(err); // выведем ошибку в консоль
@@ -28,11 +23,7 @@ export class Api {
       headers: this._headers
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
       })
       .catch((err) => {
         console.log(err); // выведем ошибку в консоль
@@ -49,11 +40,7 @@ export class Api {
       })
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
       })
       .catch((err) => {
         console.log(err); // выведем ошибку в консоль
@@ -70,11 +57,7 @@ export class Api {
       })
     })
        .then(res => {
-         if (res.ok) {
-           return res.json();
-         }
-         // если ошибка, отклоняем промис
-         return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
        })
        .catch((err) => {
          console.log(err); // выведем ошибку в консоль
@@ -87,50 +70,26 @@ export class Api {
       headers: this._headers
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
       })
       .catch((err) => {
         console.log(err); // выведем ошибку в консоль
       });
   }
 
-
-  likeOn(cardId) {
+  changeLikeCardStatus(cardId, like){
+    const method = like ? 'DELETE' : 'PUT';
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
-      method: 'PUT',
+      method: method,
       headers: this._headers
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
       })
       .catch((err) => {
         console.log(err); // выведем ошибку в консоль
       });
-  }
 
-  likeOff(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
-      method: 'DELETE',
-      headers: this._headers
-    })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
-      });
   }
 
   updateAvatar(avatar){
@@ -142,15 +101,19 @@ export class Api {
       })
     })
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        // если ошибка, отклоняем промис
-        return Promise.reject(`Ошибка: ${res.status}`);
+        return this._getResponseData(res);
       })
       .catch((err) => {
         console.log(err); // выведем ошибку в консоль
       });
   }
+
+  _getResponseData(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    // если ошибка, отклоняем промис
+    return Promise.reject(`Ошибка: ${res.status}`);
+}
 
 }

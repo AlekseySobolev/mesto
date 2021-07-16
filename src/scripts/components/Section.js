@@ -9,15 +9,10 @@ export class Section{
         this._container.prepend((card)); 
         this._element= element;    
     }
-    renderItems(){
-        this._items.forEach(element => {
-            this._container.append(this._renderer(element));    
+
+    renderItems(items, userId){
+        items.forEach(element => {
+            this._container.append(this._renderer(element, userId));    
         });    
-    }
-    // deleteCard(card){
-    //      this._container.remove(card);  
-    // }
-    updateCard(){
-        test = this._element;    
     }
 }

@@ -21,6 +21,7 @@ export class Card{
         this._qantity = cardObj.element.likes.length;
         this._likes = cardObj.element.likes;
         this._userId = cardObj.userId;
+        this._isLiked = cardObj.isLiked;
         
     }
 
@@ -70,8 +71,7 @@ export class Card{
         if (this._cardOwnerId !== this._userId){
             this.element.querySelector(Card.selectors.trashBtn).classList.add(Card.selectors.trashBtnUnactive); 
         }
-        const likedCard = this._likes.find( obj => obj._id === this._userId);
-        if (likedCard !== undefined){
+        if (this._isLiked){    
             this.element.querySelector(Card.selectors.likeBtn).classList.add(Card.selectors.likeBtnActive);
         }
         this.element.querySelector(Card.selectors.picName).textContent = this._name;
@@ -86,8 +86,10 @@ export class Card{
    isLiked(){
      const card = this._likes.find((obj) => obj._id === this._userId);
      if(card === undefined){
+        this._isLiked = false;
          return false;
      }else{
+        this._isLiked = true;
          return true;
      }
 
@@ -107,5 +109,6 @@ export class Card{
       //+1
     }
     this._likes = likes;
+    
    }
 }
