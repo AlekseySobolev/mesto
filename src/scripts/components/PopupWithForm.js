@@ -5,7 +5,7 @@ export class PopupWithForm extends Popup {
     constructor(popup, handleFormSubmit) {
         super(popup);
         this._handleFormSubmit = handleFormSubmit;
-        this._form = document.querySelector('.popup__submit-form');
+        this._form = popup.querySelector('.popup__submit-form');
         this._button =  this._form.querySelector('.popup__submit-btn');
     }
 
@@ -45,4 +45,8 @@ export class PopupWithForm extends Popup {
     getForm(){
         return this._form;
     }
+
+    setButtonTextContent(textContent){
+        this._button.textContent = textContent; 
+      }
 }

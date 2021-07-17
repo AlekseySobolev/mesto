@@ -1,7 +1,7 @@
 export class Popup{
    
-    constructor(popupSelector){
-        this.popup =  document.querySelector(popupSelector);
+    constructor(popup){
+       this.popup = popup;
         this._handleEscClose = this._handleEscClose.bind(this);
     }
 
@@ -16,10 +16,6 @@ export class Popup{
         this.popup.classList.add('popup_opened');
     }
     close(){
-        this._inputList = this.popup.querySelectorAll('.popup__text-field');
-        this._inputList.forEach(input => {
-               input.value = '';
-            });
         document.removeEventListener('keydown', this._handleEscClose);
         this.popup.classList.remove('popup_opened');
     }

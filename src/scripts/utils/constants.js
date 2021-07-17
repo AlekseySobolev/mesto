@@ -8,9 +8,9 @@ export const elementTemplate = document.querySelector('.elementTemplate').conten
 export const profileSection = document.querySelector('.profile__content');
 export const profileAuthor = profileSection.querySelector('.profile__author');
 export const profileSubline = profileSection.querySelector('.profile__author-subline');
-export const profileAvatar = profileSection.querySelector('.profile__avatar');
-export const profileModal = '.popup-profile';
-export const editAvatarModal = '.popup-edit-avatar';
-export const cardModal = '.popup-card';
-export const deleteCardModal = '.popup-delete-card';
+export const profileAvatar = profileSection.querySelector('.profile__avatar');  
+export const profileModal = document.querySelector('.popup-profile');
+export const editAvatarModal = document.querySelector('.popup-edit-avatar');
+export const cardModal = document.querySelector('.popup-card');
+export const deleteCardModal = document.querySelector('.popup-delete-card');
 

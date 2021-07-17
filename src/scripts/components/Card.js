@@ -21,8 +21,7 @@ export class Card{
         this._qantity = cardObj.element.likes.length;
         this._likes = cardObj.element.likes;
         this._userId = cardObj.userId;
-        this._isLiked = cardObj.isLiked;
-        
+        this._isLiked = this.isLiked();
     }
 
     _getTemplate(){
@@ -47,12 +46,10 @@ export class Card{
     }
     
     _handleLikeBtnClick(){
-        //this.element.querySelector(Card.selectors.likeBtn).classList.toggle(Card.selectors.likeBtnActive);
         this.handleLikeClick();
     }
 
     _handleTrashBtnClick(){
-        //this._handleDeleteCardClick(this._cardObj); 
         this.handleDeleteClick();
     }
 
@@ -95,20 +92,20 @@ export class Card{
 
    }
    updateLikes(isLiked, likes){
+    
+    this._qantity = likes.length;
+
     if(isLiked){
-      
       this.element.querySelector(Card.selectors.likeBtn).classList.remove(Card.selectors.likeBtnActive);
-      this._qantity--;
       this.element.querySelector(Card.selectors.likeQantity).textContent = this._qantity;
-      //-1
     }
     else{
       this.element.querySelector(Card.selectors.likeBtn).classList.add(Card.selectors.likeBtnActive);    
-      this._qantity++;
       this.element.querySelector(Card.selectors.likeQantity).textContent = this._qantity;
-      //+1
     }
-    this._likes = likes;
-    
+    this._likes = likes;    
+   }
+   getId(){
+       return this._id;
    }
 }

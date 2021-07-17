@@ -11,9 +11,6 @@ export class Api {
     })
       .then(res => {
         return this._getResponseData(res);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
       });
   }
 
@@ -24,9 +21,6 @@ export class Api {
     })
       .then(res => {
         return this._getResponseData(res);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
       });
   }
 
@@ -41,9 +35,6 @@ export class Api {
     })
       .then(res => {
         return this._getResponseData(res);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
       });
   }
 
@@ -58,9 +49,6 @@ export class Api {
     })
        .then(res => {
         return this._getResponseData(res);
-       })
-       .catch((err) => {
-         console.log(err); // выведем ошибку в консоль
        });
   }
 
@@ -71,9 +59,6 @@ export class Api {
     })
       .then(res => {
         return this._getResponseData(res);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
       });
   }
 
@@ -85,11 +70,7 @@ export class Api {
     })
       .then(res => {
         return this._getResponseData(res);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
       });
-
   }
 
   updateAvatar(avatar){
@@ -102,9 +83,6 @@ export class Api {
     })
       .then(res => {
         return this._getResponseData(res);
-      })
-      .catch((err) => {
-        console.log(err); // выведем ошибку в консоль
       });
   }
 

@@ -22,7 +22,7 @@ const еditAvatarModalFormValidation = new FormValidator(validationObj, editAvat
 
 const popupcard = new PopupWithForm(cardModal, submitCardModal);
 const cardModalFormValidation = new FormValidator(validationObj, cardModal);
-const popupPreview = new PopupWithImage('.popup-preview');
+const popupPreview = new PopupWithImage(document.querySelector('.popup-preview'));
 
 const popupDeleteCardModal = new SubmitPopup(deleteCardModal);
 
@@ -82,10 +82,7 @@ function openCardModal() {
 
 //
 function submitProfileModal(formValues) {
-
-  const textContent = document.querySelector('.popup__form').querySelector('.popup__submit-btn').textContent;
-  document.querySelector('.popup__form').querySelector('.popup__submit-btn').textContent = "Сохранение...";
-
+  popupProfile.setButtonTextContent('Сохранение...');
   const profileData = { name: formValues.inputForm1, info: formValues.inputForm2 };
   //3.Редактирование профиля
   api.updateProfile(profileData)
@@ -97,7 +94,7 @@ function submitProfileModal(formValues) {
     console.log(err); // выведем ошибку в консоль
   })
   .finally(() =>{
-    document.querySelector('.popup__form').querySelector('.popup__submit-btn').textContent = textContent;
+    popupProfile.setButtonTextContent('Сохранить');
   });
 }
 
@@ -112,49 +109,42 @@ function submitCardModal(formValues) {
   element.owner._id = formValues._userId;
 
   //4.Добавление новой карточки
-  const textContent = document.querySelector('.popup__card-form').querySelector('.popup__submit-btn').textContent;
-  document.querySelector('.popup__card-form').querySelector('.popup__submit-btn').textContent = "Сохранение...";
+  popupcard.setButtonTextContent('Сохранение...');
   api.addCard(element)
   .then((result) => {
-    section.addItem(createCard(result, formValues._userId));  
+    section.addItem(createCard(result, formValues._userId));
+    popupcard.close(); 
   })
   .catch((err) => {
     console.log(err); // выведем ошибку в консоль
   })
   .finally(() =>{
-    popupcard.close();
-    document.querySelector('.popup__card-form').querySelector('.popup__submit-btn').textContent = textContent;
+    popupcard.setButtonTextContent('Сохранить');
   });
 }
 
 function submitEditAvatarModal(formValues){
   
-  const textContent = document.querySelector('.popup__edit-avatar-form').querySelector('.popup__submit-btn').textContent;
-  document.querySelector('.popup__edit-avatar-form').querySelector('.popup__submit-btn').textContent = "Сохранение...";
-
+  popupEditAvatar.setButtonTextContent('Сохранение...');
   api.updateAvatar(formValues.inputForm1)
   .then((result) => {
-    //profileAvatar.src = result.avatar;
     uInf.setUserInfo({name: result.name, info: result.about, avatar: result.avatar});
+    popupEditAvatar.close(); 
   })
   .catch((err) => {
     console.log(err); // выведем ошибку в консоль
   })
-  .finally(() =>{
-    popupEditAvatar.close(); 
-    document.querySelector('.popup__edit-avatar-form').querySelector('.popup__submit-btn').textContent = textContent;    
+  .finally(() =>{   
+    popupEditAvatar.setButtonTextContent('Сохранить');
   });
 }
 
 function createCard(element, userId, likes) {
-  const likedCard = element.likes.find( obj => obj._id === userId);
-  const isLiked  = likedCard === undefined ?  false : true;
   const card = new Card({
     element, 
     userId, 
     elementTemplate,
     likes,
-    isLiked,
     handleLikeClick: () => {
       const isLiked = card.isLiked();
         api.changeLikeCardStatus(card._id,  isLiked)
@@ -168,7 +158,7 @@ function createCard(element, userId, likes) {
     },
     handleDeleteClick: () =>{
       popupDeleteCardModal.setConfirmHandler(() => {
-        api.deleteCard(card._id)
+        api.deleteCard(card.getId())
         .then(() =>{
           card.deleteCard();
           popupDeleteCardModal.close();
@@ -185,6 +175,7 @@ function createCard(element, userId, likes) {
   });
   return card.generateCard();
 }
+
 //подписки на события 
 profileModalOpenBtn.addEventListener('click', () => openProfileModal()); 
 cardModalOpenBtn.addEventListener('click', () => openCardModal());
